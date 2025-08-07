@@ -19,7 +19,7 @@ EditTab::EditTab(Jv880_juceAudioProcessor& p) :
   editTone (p)
 {
     addAndMakeVisible(tabs);
-    setSize(820, 800);
+    setSize(820, 1000);
 
     tabs.addTab("Common", getLookAndFeel().findColour (juce::ResizableWindow::backgroundColourId), &editCommon, false);
     tabs.addTab("Tone", getLookAndFeel().findColour (juce::ResizableWindow::backgroundColourId), &editTone, false);

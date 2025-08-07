@@ -17,7 +17,7 @@ Jv880_juceAudioProcessorEditor::Jv880_juceAudioProcessorEditor(
       settingsTab(p) {
   addAndMakeVisible(lcd);
   addAndMakeVisible(tabs);
-  setSize(820, 800);
+  setSize(820, 1000);
 
   tabs.addTab(
       "Browse",
@@ -57,5 +57,5 @@ Jv880_juceAudioProcessorEditor::~Jv880_juceAudioProcessorEditor() {}
 
 void Jv880_juceAudioProcessorEditor::resized() {
   lcd.setBounds(0, 0, 820, 100);
-  tabs.setBounds(0, 100, 820, 700);
+  tabs.setBounds(0, 100, 820, 900);
 }
