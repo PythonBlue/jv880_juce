@@ -942,6 +942,9 @@ EditToneTab::EditToneTab(Jv880_juceAudioProcessor& p) : audioProcessor (p)
     aenvVelCurveComboBox.addItem ("5", 5);
     aenvVelCurveComboBox.addItem ("6", 6);
     aenvVelCurveComboBox.addItem ("7", 7);
+    addAndMakeVisible (aenvVelCurveLabel);
+    aenvVelCurveLabel.setText ("Curve", juce::dontSendNotification);
+    aenvVelCurveLabel.attachToComponent (&aenvVelCurveComboBox, true);
     
     addAndMakeVisible(aenvLevSensSlider);
     aenvLevSensSlider.setSliderStyle(juce::Slider::SliderStyle::LinearBar);
