@@ -101,7 +101,7 @@ EditToneTab::EditToneTab(Jv880_juceAudioProcessor& p) : audioProcessor (p)
     modDestAComboBox.addItem ("LFO2 Rate", 13);
     addAndMakeVisible (modSensASlider);
     modSensASlider.setSliderStyle(juce::Slider::SliderStyle::LinearBar);
-    modSensASlider.setRange (0, 127, 1);
+    modSensASlider.setRange (-63, 63, 1);
     modSensASlider.addListener (this);
     
     addAndMakeVisible(modDestBLabel);
@@ -124,7 +124,7 @@ EditToneTab::EditToneTab(Jv880_juceAudioProcessor& p) : audioProcessor (p)
     modDestBComboBox.addItem ("LFO2 Rate", 13);
     addAndMakeVisible (modSensBSlider);
     modSensBSlider.setSliderStyle(juce::Slider::SliderStyle::LinearBar);
-    modSensBSlider.setRange (0, 127, 1);
+    modSensBSlider.setRange (-63, 63, 1);
     modSensBSlider.addListener (this);
     
     addAndMakeVisible(modDestCLabel);
@@ -147,7 +147,7 @@ EditToneTab::EditToneTab(Jv880_juceAudioProcessor& p) : audioProcessor (p)
     modDestCComboBox.addItem ("LFO2 Rate", 13);
     addAndMakeVisible (modSensCSlider);
     modSensCSlider.setSliderStyle(juce::Slider::SliderStyle::LinearBar);
-    modSensCSlider.setRange (0, 127, 1);
+    modSensCSlider.setRange (-63, 63, 1);
     modSensCSlider.addListener (this);
     
     addAndMakeVisible(modDestDLabel);
@@ -170,7 +170,7 @@ EditToneTab::EditToneTab(Jv880_juceAudioProcessor& p) : audioProcessor (p)
     modDestDComboBox.addItem ("LFO2 Rate", 13);
     addAndMakeVisible (modSensDSlider);
     modSensDSlider.setSliderStyle(juce::Slider::SliderStyle::LinearBar);
-    modSensDSlider.setRange (0, 127, 1);
+    modSensDSlider.setRange (-63, 63, 1);
     modSensDSlider.addListener (this);
     
     addAndMakeVisible(aftDestALabel);
@@ -193,7 +193,7 @@ EditToneTab::EditToneTab(Jv880_juceAudioProcessor& p) : audioProcessor (p)
     aftDestAComboBox.addItem ("LFO2 Rate", 13);
     addAndMakeVisible (aftSensASlider);
     aftSensASlider.setSliderStyle(juce::Slider::SliderStyle::LinearBar);
-    aftSensASlider.setRange (0, 127, 1);
+    aftSensASlider.setRange (-63, 63, 1);
     aftSensASlider.addListener (this);
     
     addAndMakeVisible(aftDestBLabel);
@@ -216,7 +216,7 @@ EditToneTab::EditToneTab(Jv880_juceAudioProcessor& p) : audioProcessor (p)
     aftDestBComboBox.addItem ("LFO2 Rate", 13);
     addAndMakeVisible (aftSensBSlider);
     aftSensBSlider.setSliderStyle(juce::Slider::SliderStyle::LinearBar);
-    aftSensBSlider.setRange (0, 127, 1);
+    aftSensBSlider.setRange (-63, 63, 1);
     aftSensBSlider.addListener (this);
     
     addAndMakeVisible(aftDestCLabel);
@@ -239,7 +239,7 @@ EditToneTab::EditToneTab(Jv880_juceAudioProcessor& p) : audioProcessor (p)
     aftDestCComboBox.addItem ("LFO2 Rate", 13);
     addAndMakeVisible (aftSensCSlider);
     aftSensCSlider.setSliderStyle(juce::Slider::SliderStyle::LinearBar);
-    aftSensCSlider.setRange (0, 127, 1);
+    aftSensCSlider.setRange (-63, 63, 1);
     aftSensCSlider.addListener (this);
     
     addAndMakeVisible(aftDestDLabel);
@@ -262,7 +262,7 @@ EditToneTab::EditToneTab(Jv880_juceAudioProcessor& p) : audioProcessor (p)
     aftDestDComboBox.addItem ("LFO2 Rate", 13);
     addAndMakeVisible (aftSensDSlider);
     aftSensDSlider.setSliderStyle(juce::Slider::SliderStyle::LinearBar);
-    aftSensDSlider.setRange (0, 127, 1);
+    aftSensDSlider.setRange (-63, 63, 1);
     aftSensDSlider.addListener (this);
     
     addAndMakeVisible(expDestALabel);
@@ -285,7 +285,7 @@ EditToneTab::EditToneTab(Jv880_juceAudioProcessor& p) : audioProcessor (p)
     expDestAComboBox.addItem ("LFO2 Rate", 13);
     addAndMakeVisible (expSensASlider);
     expSensASlider.setSliderStyle(juce::Slider::SliderStyle::LinearBar);
-    expSensASlider.setRange (0, 127, 1);
+    expSensASlider.setRange (-63, 63, 1);
     expSensASlider.addListener (this);
     
     addAndMakeVisible(expDestBLabel);
@@ -308,7 +308,7 @@ EditToneTab::EditToneTab(Jv880_juceAudioProcessor& p) : audioProcessor (p)
     expDestBComboBox.addItem ("LFO2 Rate", 13);
     addAndMakeVisible (expSensBSlider);
     expSensBSlider.setSliderStyle(juce::Slider::SliderStyle::LinearBar);
-    expSensBSlider.setRange (0, 127, 1);
+    expSensBSlider.setRange (-63, 63, 1);
     expSensBSlider.addListener (this);
     
     addAndMakeVisible(expDestCLabel);
@@ -331,7 +331,7 @@ EditToneTab::EditToneTab(Jv880_juceAudioProcessor& p) : audioProcessor (p)
     expDestCComboBox.addItem ("LFO2 Rate", 13);
     addAndMakeVisible (expSensCSlider);
     expSensCSlider.setSliderStyle(juce::Slider::SliderStyle::LinearBar);
-    expSensCSlider.setRange (0, 127, 1);
+    expSensCSlider.setRange (-63, 63, 1);
     expSensCSlider.addListener (this);
     
     addAndMakeVisible(expDestDLabel);
@@ -354,7 +354,7 @@ EditToneTab::EditToneTab(Jv880_juceAudioProcessor& p) : audioProcessor (p)
     expDestDComboBox.addItem ("LFO2 Rate", 13);
     addAndMakeVisible (expSensDSlider);
     expSensDSlider.setSliderStyle(juce::Slider::SliderStyle::LinearBar);
-    expSensDSlider.setRange (0, 127, 1);
+    expSensDSlider.setRange (-63, 63, 1);
     expSensDSlider.addListener (this);
     
     addAndMakeVisible(lfo1FormLabel);
@@ -411,14 +411,14 @@ EditToneTab::EditToneTab(Jv880_juceAudioProcessor& p) : audioProcessor (p)
     lfo1PitchDepthLabel.attachToComponent (&lfo1PitchDepthSlider, true);
     addAndMakeVisible (lfo1TVFDepthSlider);
     lfo1TVFDepthSlider.setSliderStyle(juce::Slider::SliderStyle::LinearBar);
-    lfo1TVFDepthSlider.setRange (-60, 63, 1);
+    lfo1TVFDepthSlider.setRange (-63, 63, 1);
     lfo1TVFDepthSlider.addListener (this);
     addAndMakeVisible (lfo1TVFDepthLabel);
     lfo1TVFDepthLabel.setText ("TVF", juce::dontSendNotification);
     lfo1TVFDepthLabel.attachToComponent (&lfo1TVFDepthSlider, true);
     addAndMakeVisible (lfo1TVADepthSlider);
     lfo1TVADepthSlider.setSliderStyle(juce::Slider::SliderStyle::LinearBar);
-    lfo1TVADepthSlider.setRange (-60, 63, 1);
+    lfo1TVADepthSlider.setRange (-63, 63, 1);
     lfo1TVADepthSlider.addListener (this);
     addAndMakeVisible (lfo1TVADepthLabel);
     lfo1TVADepthLabel.setText ("TVA", juce::dontSendNotification);
@@ -478,14 +478,14 @@ EditToneTab::EditToneTab(Jv880_juceAudioProcessor& p) : audioProcessor (p)
     lfo2PitchDepthLabel.attachToComponent (&lfo2PitchDepthSlider, true);
     addAndMakeVisible (lfo2TVFDepthSlider);
     lfo2TVFDepthSlider.setSliderStyle(juce::Slider::SliderStyle::LinearBar);
-    lfo2TVFDepthSlider.setRange (-60, 63, 1);
+    lfo2TVFDepthSlider.setRange (-63, 63, 1);
     lfo2TVFDepthSlider.addListener (this);
     addAndMakeVisible (lfo2TVFDepthLabel);
     lfo2TVFDepthLabel.setText ("TVF", juce::dontSendNotification);
     lfo2TVFDepthLabel.attachToComponent (&lfo2TVFDepthSlider, true);
     addAndMakeVisible (lfo2TVADepthSlider);
     lfo2TVADepthSlider.setSliderStyle(juce::Slider::SliderStyle::LinearBar);
-    lfo2TVADepthSlider.setRange (-60, 63, 1);
+    lfo2TVADepthSlider.setRange (-63, 63, 1);
     lfo2TVADepthSlider.addListener (this);
     addAndMakeVisible (lfo2TVADepthLabel);
     lfo2TVADepthLabel.setText ("TVA", juce::dontSendNotification);
@@ -531,26 +531,26 @@ EditToneTab::EditToneTab(Jv880_juceAudioProcessor& p) : audioProcessor (p)
     
     addAndMakeVisible (pitchKFComboBox);
     pitchKFComboBox.addListener (this);
-    pitchKFComboBox.addItem ("0", 1);
-    pitchKFComboBox.addItem ("5", 2);
-    pitchKFComboBox.addItem ("10", 3);
-    pitchKFComboBox.addItem ("20", 4);
-    pitchKFComboBox.addItem ("30", 5);
-    pitchKFComboBox.addItem ("40", 6);
-    pitchKFComboBox.addItem ("50", 7);
-    pitchKFComboBox.addItem ("70", 8);
-    pitchKFComboBox.addItem ("100", 9);
-    pitchKFComboBox.addItem ("200", 10);
-    pitchKFComboBox.addItem ("300", 11);
-    pitchKFComboBox.addItem ("400", 12);
-    pitchKFComboBox.addItem ("500", 13);
-    pitchKFComboBox.addItem ("600", 14);
-    pitchKFComboBox.addItem ("800", 15);
-    pitchKFComboBox.addItem ("1200", 16);
+    pitchKFComboBox.addItem ("-100", 1);
+    pitchKFComboBox.addItem ("-70", 2);
+    pitchKFComboBox.addItem ("-50", 3);
+    pitchKFComboBox.addItem ("-30", 4);
+    pitchKFComboBox.addItem ("-10", 5);
+    pitchKFComboBox.addItem ("0", 6);
+    pitchKFComboBox.addItem ("10", 7);
+    pitchKFComboBox.addItem ("20", 8);
+    pitchKFComboBox.addItem ("30", 9);
+    pitchKFComboBox.addItem ("40", 10);
+    pitchKFComboBox.addItem ("50", 11);
+    pitchKFComboBox.addItem ("70", 12);
+    pitchKFComboBox.addItem ("100", 13);
+    pitchKFComboBox.addItem ("120", 14);
+    pitchKFComboBox.addItem ("150", 15);
+    pitchKFComboBox.addItem ("200", 16);
     
     addAndMakeVisible(penvLevSensSlider);
     penvLevSensSlider.setSliderStyle(juce::Slider::SliderStyle::LinearBar);
-    penvLevSensSlider.setRange (-63, 63, 1);
+    penvLevSensSlider.setRange (-12, 12, 1);
     penvLevSensSlider.addListener (this);
     addAndMakeVisible (penvLevSensLabel);
     penvLevSensLabel.setText ("Pitch Sens", juce::dontSendNotification);
@@ -1107,6 +1107,115 @@ void EditToneTab::updateValues()
     
     volumeSwitchToggle.setToggleState(((tone.flags >> 7) & 0x01) ? 1 : 0, juce::dontSendNotification);
     holdSwitchToggle.setToggleState(((tone.flags >> 6) & 0x01) ? 1 : 0, juce::dontSendNotification);
+    
+    modDestAComboBox.setSelectedItemIndex((tone.unk_0x05 & 0xf) + 0, juce::dontSendNotification);
+    modDestBComboBox.setSelectedItemIndex(((tone.unk_0x05 & 0xf0) >> 4) + 0, juce::dontSendNotification);
+    modDestCComboBox.setSelectedItemIndex((tone.unk_0x06 & 0xf) + 0, juce::dontSendNotification);
+    modDestDComboBox.setSelectedItemIndex(((tone.unk_0x06 & 0xf0) >> 4) + 0, juce::dontSendNotification);
+    modSensASlider.setValue(int8_t((tone.unk_0x07)) - 0, juce::dontSendNotification);
+    modSensBSlider.setValue(int8_t((tone.unk_0x08)) - 0, juce::dontSendNotification);
+    modSensCSlider.setValue(int8_t((tone.unk_0x09)) - 0, juce::dontSendNotification);
+    modSensDSlider.setValue(int8_t((tone.unk_0x0A)) - 0, juce::dontSendNotification);
+    aftDestAComboBox.setSelectedItemIndex((tone.unk_0x0B & 0xf) + 0, juce::dontSendNotification);
+    aftDestBComboBox.setSelectedItemIndex(((tone.unk_0x0B & 0xf0) >> 4) + 0, juce::dontSendNotification);
+    aftDestCComboBox.setSelectedItemIndex((tone.unk_0x0C & 0xf) + 0, juce::dontSendNotification);
+    aftDestDComboBox.setSelectedItemIndex(((tone.unk_0x0C & 0xf0) >> 4) + 0, juce::dontSendNotification);
+    aftSensASlider.setValue(int8_t((tone.unk_0x0D)) - 0, juce::dontSendNotification);
+    aftSensBSlider.setValue(int8_t((tone.unk_0x0E)) - 0, juce::dontSendNotification);
+    aftSensCSlider.setValue(int8_t((tone.unk_0x0F)) - 0, juce::dontSendNotification);
+    aftSensDSlider.setValue(int8_t((tone.unk_0x10)) - 0, juce::dontSendNotification);
+    expDestAComboBox.setSelectedItemIndex((tone.unk_0x11 & 0xf) + 0, juce::dontSendNotification);
+    expDestBComboBox.setSelectedItemIndex(((tone.unk_0x11 & 0xf0) >> 4) + 0, juce::dontSendNotification);
+    expDestCComboBox.setSelectedItemIndex((tone.unk_0x12 & 0xf) + 0, juce::dontSendNotification);
+    expDestDComboBox.setSelectedItemIndex(((tone.unk_0x12 & 0xf0) >> 4) + 0, juce::dontSendNotification);
+    expSensASlider.setValue(int8_t((tone.unk_0x13)) - 0, juce::dontSendNotification);
+    expSensBSlider.setValue(int8_t((tone.unk_0x14)) - 0, juce::dontSendNotification);
+    expSensCSlider.setValue(int8_t((tone.unk_0x15)) - 0, juce::dontSendNotification);
+    expSensDSlider.setValue(int8_t((tone.unk_0x16)) - 0, juce::dontSendNotification);
+    
+    lfo1FormComboBox.setSelectedItemIndex((tone.lfo1Flags & 0x7) + 0, juce::dontSendNotification);
+    lfo1OffsetComboBox.setSelectedItemIndex((tone.lfo1Flags & 0x38) >> 3, juce::dontSendNotification);
+    lfo1SyncToggle.setToggleState(((tone.lfo1Flags & 0x40) >> 6) ? 1 : 0, juce::dontSendNotification);
+    lfo1FadeToggle.setToggleState(((tone.lfo1Flags & 0x80) >> 7) ? 1 : 0, juce::dontSendNotification);
+    lfo1RateSlider.setValue(((tone.lfo1Rate)) - 0, juce::dontSendNotification);
+    lfo1DelaySlider.setValue(((tone.lfo1Delay)) - 0, juce::dontSendNotification);
+    lfo1FadeTimeSlider.setValue(((tone.lfo1Fade)) - 0, juce::dontSendNotification);
+    lfo1PitchDepthSlider.setValue(int8_t((tone.lfo1PitchDepth)) - 0, juce::dontSendNotification);
+    lfo1TVFDepthSlider.setValue(int8_t((tone.lfo1TvfDepth)) - 0, juce::dontSendNotification);
+    lfo1TVADepthSlider.setValue(int8_t((tone.lfo1TvaDepth)) - 0, juce::dontSendNotification);
+    
+    lfo2FormComboBox.setSelectedItemIndex((tone.lfo2Flags & 0x7) + 0, juce::dontSendNotification);
+    lfo2OffsetComboBox.setSelectedItemIndex((tone.lfo2Flags & 0x38) >> 3, juce::dontSendNotification);
+    lfo2SyncToggle.setToggleState(((tone.lfo2Flags & 0x40) >> 6) ? 1 : 0, juce::dontSendNotification);
+    lfo2FadeToggle.setToggleState(((tone.lfo2Flags & 0x80) >> 7) ? 1 : 0, juce::dontSendNotification);
+    lfo2RateSlider.setValue(((tone.lfo2Rate)) - 0, juce::dontSendNotification);
+    lfo2DelaySlider.setValue(((tone.lfo2Delay)) - 0, juce::dontSendNotification);
+    lfo2FadeTimeSlider.setValue(((tone.lfo2Fade)) - 0, juce::dontSendNotification);
+    lfo2PitchDepthSlider.setValue(int8_t((tone.lfo2PitchDepth)) - 0, juce::dontSendNotification);
+    lfo2TVFDepthSlider.setValue(int8_t((tone.lfo2TvfDepth)) - 0, juce::dontSendNotification);
+    lfo2TVADepthSlider.setValue(int8_t((tone.lfo2TvaDepth)) - 0, juce::dontSendNotification);
+    
+    pitchCoarseSlider.setValue(int8_t((tone.pitchCoarse)) - 0, juce::dontSendNotification);
+    pitchFineSlider.setValue(int8_t((tone.pitchFine)) - 0, juce::dontSendNotification);
+    pitchRandomComboBox.setSelectedItemIndex((tone.tvaPanningKFRandomPitch & 0xf), juce::dontSendNotification);
+    pitchKFComboBox.setSelectedItemIndex((tone.tvpTimeKFKeyfollow & 0xf), juce::dontSendNotification);
+    penvLevSensSlider.setValue(int8_t((tone.tvpVelocity)) - 0, juce::dontSendNotification);
+    penvTime1SensComboBox.setSelectedItemIndex((tone.tvpT1T4Velocity & 0xf), juce::dontSendNotification);
+    penvTime4SensComboBox.setSelectedItemIndex((tone.tvpT1T4Velocity & 0xf0) >> 4, juce::dontSendNotification);
+    penvTimeKFSensComboBox.setSelectedItemIndex((tone.tvpTimeKFKeyfollow & 0xf0) >> 4, juce::dontSendNotification);
+    penvDepthSlider.setValue(int8_t((tone.tvpVelocity)) - 0, juce::dontSendNotification);
+    penv1TimeSlider.setValue(int8_t((tone.tvpEnvTime1)), juce::dontSendNotification);
+    penv1LevelSlider.setValue(int8_t((tone.tvpEnvLevel1) - 0), juce::dontSendNotification);
+    penv2TimeSlider.setValue(int8_t((tone.tvpEnvTime2)), juce::dontSendNotification);
+    penv2LevelSlider.setValue(int8_t((tone.tvpEnvLevel2) - 0), juce::dontSendNotification);
+    penv3TimeSlider.setValue(int8_t((tone.tvpEnvTime3)), juce::dontSendNotification);
+    penv3LevelSlider.setValue(int8_t((tone.tvpEnvLevel3) - 0), juce::dontSendNotification);
+    penv4TimeSlider.setValue(int8_t((tone.tvpEnvTime4)), juce::dontSendNotification);
+    penv4LevelSlider.setValue(int8_t((tone.tvpEnvLevel4) - 0), juce::dontSendNotification);
+    
+    filterModeComboBox.setSelectedItemIndex((tone.tvfVeloCurveLpfHpf & 0x18) >> 3, juce::dontSendNotification);
+    filterCutoffSlider.setValue(int8_t((tone.tvfCutoff)), juce::dontSendNotification);
+    filterResoSlider.setValue(int8_t((tone.tvfResonance)), juce::dontSendNotification);
+    filterResoModeComboBox.setSelectedItemIndex((tone.tvfResonance & 0x80) >> 7, juce::dontSendNotification);
+    filterKFComboBox.setSelectedItemIndex((tone.tvfTimeKFKeyfollow & 0xf), juce::dontSendNotification);
+    fenvVelCurveComboBox.setSelectedItemIndex((tone.tvfVeloCurveLpfHpf & 0x7), juce::dontSendNotification);
+    fenvLevSensSlider.setValue(int8_t((tone.tvfVelocity)) - 0, juce::dontSendNotification);
+    fenvTime1SensComboBox.setSelectedItemIndex((tone.tvfT1T4Velocity & 0xf), juce::dontSendNotification);
+    fenvTime4SensComboBox.setSelectedItemIndex((tone.tvfT1T4Velocity & 0xf0) >> 4, juce::dontSendNotification);
+    fenvTimeKFSensComboBox.setSelectedItemIndex((tone.tvfTimeKFKeyfollow & 0xf0) >> 4, juce::dontSendNotification);
+    fenvDepthSlider.setValue(int8_t((tone.tvpVelocity)) - 0, juce::dontSendNotification);
+    fenv1TimeSlider.setValue(int8_t((tone.tvfEnvTime1)), juce::dontSendNotification);
+    fenv1LevelSlider.setValue(int8_t((tone.tvfEnvLevel1) - 0), juce::dontSendNotification);
+    fenv2TimeSlider.setValue(int8_t((tone.tvfEnvTime2)), juce::dontSendNotification);
+    fenv2LevelSlider.setValue(int8_t((tone.tvfEnvLevel2) - 0), juce::dontSendNotification);
+    fenv3TimeSlider.setValue(int8_t((tone.tvfEnvTime3)), juce::dontSendNotification);
+    fenv3LevelSlider.setValue(int8_t((tone.tvfEnvLevel3) - 0), juce::dontSendNotification);
+    fenv4TimeSlider.setValue(int8_t((tone.tvfEnvTime4)), juce::dontSendNotification);
+    fenv4LevelSlider.setValue(int8_t((tone.tvfEnvLevel4) - 0), juce::dontSendNotification);
+    
+    levelSlider.setValue(int8_t((tone.tvaLevel)), juce::dontSendNotification);
+    levelKFComboBox.setSelectedItemIndex((tone.tvaTimeKFDelayTimeKeyfollow & 0xf), juce::dontSendNotification);
+    panSlider.setValue(int8_t(tone.tvaPan) < -64 ? 64 : int8_t(tone.tvaPan), juce::dontSendNotification);
+    panKFComboBox.setSelectedItemIndex((tone.tvaPanningKFRandomPitch & 0xf0) >> 4, juce::dontSendNotification);
+    toneDelayComboBox.setSelectedItemIndex((tone.tvaDelayModeVeloCurve & 0x18) >> 3, juce::dontSendNotification);
+    toneDelayTimeSlider.setValue(int8_t((tone.unk_0x45)) - 0, juce::dontSendNotification);
+    aenvVelCurveComboBox.setSelectedItemIndex((tone.tvaDelayModeVeloCurve & 0x7), juce::dontSendNotification);
+    aenvLevSensSlider.setValue(int8_t((tone.tvaVelocity)) - 0, juce::dontSendNotification);
+    aenvTime1SensComboBox.setSelectedItemIndex((tone.tvaT1T4Velocity & 0x0f), juce::dontSendNotification);
+    aenvTime4SensComboBox.setSelectedItemIndex((tone.tvaT1T4Velocity & 0xf0) >> 4, juce::dontSendNotification);
+    aenvTimeKFSensComboBox.setSelectedItemIndex((tone.tvaTimeKFDelayTimeKeyfollow & 0xf0) >> 4, juce::dontSendNotification);
+    fenv1TimeSlider.setValue(int8_t((tone.tvaEnvTime1)), juce::dontSendNotification);
+    fenv1LevelSlider.setValue(int8_t((tone.tvaEnvLevel1)), juce::dontSendNotification);
+    fenv2TimeSlider.setValue(int8_t((tone.tvaEnvTime2)), juce::dontSendNotification);
+    fenv2LevelSlider.setValue(int8_t((tone.tvaEnvLevel2)), juce::dontSendNotification);
+    fenv3TimeSlider.setValue(int8_t((tone.tvaEnvTime3)), juce::dontSendNotification);
+    fenv3LevelSlider.setValue(int8_t((tone.tvaEnvLevel3)), juce::dontSendNotification);
+    fenv4TimeSlider.setValue(int8_t((tone.tvaEnvTime4)), juce::dontSendNotification);
+    
+    drySlider.setValue(int8_t((tone.drySend)), juce::dontSendNotification);
+    reverbSlider.setValue(int8_t((tone.reverbSend)), juce::dontSendNotification);
+    chorusSlider.setValue(int8_t((tone.chorusSend)), juce::dontSendNotification);
+    
 }
 
 void EditToneTab::visibilityChanged()
@@ -1253,6 +1362,134 @@ void EditToneTab::sliderValueChanged (juce::Slider* slider)
         sendSysexPatchToneChange1(6,(uint8_t(velRangeLowSlider.getValue())));
     if (slider == &velRangeHighSlider)
         sendSysexPatchToneChange1(7,(uint8_t(velRangeHighSlider.getValue())));
+    if (slider == &modSensASlider)
+        sendSysexPatchToneChange1(11,(uint8_t(modSensASlider.getValue() + 64)));
+    if (slider == &modSensBSlider)
+        sendSysexPatchToneChange1(13,(uint8_t(modSensBSlider.getValue() + 64)));
+    if (slider == &modSensCSlider)
+        sendSysexPatchToneChange1(15,(uint8_t(modSensCSlider.getValue() + 64)));
+    if (slider == &modSensDSlider)
+        sendSysexPatchToneChange1(17,(uint8_t(modSensDSlider.getValue() + 64)));
+    if (slider == &aftSensASlider)
+        sendSysexPatchToneChange1(19,(uint8_t(aftSensASlider.getValue() + 64)));
+    if (slider == &aftSensBSlider)
+        sendSysexPatchToneChange1(21,(uint8_t(aftSensBSlider.getValue() + 64)));
+    if (slider == &aftSensCSlider)
+        sendSysexPatchToneChange1(23,(uint8_t(aftSensCSlider.getValue() + 64)));
+    if (slider == &aftSensDSlider)
+        sendSysexPatchToneChange1(25,(uint8_t(aftSensDSlider.getValue() + 64)));
+    if (slider == &expSensASlider)
+        sendSysexPatchToneChange1(27,(uint8_t(expSensASlider.getValue() + 64)));
+    if (slider == &expSensBSlider)
+        sendSysexPatchToneChange1(29,(uint8_t(expSensBSlider.getValue() + 64)));
+    if (slider == &expSensCSlider)
+        sendSysexPatchToneChange1(31,(uint8_t(expSensCSlider.getValue() + 64)));
+    if (slider == &expSensDSlider)
+        sendSysexPatchToneChange1(33,(uint8_t(expSensDSlider.getValue() + 64)));
+    if (slider == &lfo1RateSlider)
+        sendSysexPatchToneChange1(37,(uint8_t(lfo1RateSlider.getValue())));
+    if (slider == &lfo1DelaySlider)
+        sendSysexPatchToneChange2(38,(uint8_t(lfo1DelaySlider.getValue())));
+    if (slider == &lfo1FadeTimeSlider)
+        sendSysexPatchToneChange1(41,(uint8_t(lfo1FadeTimeSlider.getValue())));
+    if (slider == &lfo1PitchDepthSlider)
+        sendSysexPatchToneChange1(42,(uint8_t(lfo1PitchDepthSlider.getValue() + 64)));
+    if (slider == &lfo1TVFDepthSlider)
+        sendSysexPatchToneChange1(43,(uint8_t(lfo1TVFDepthSlider.getValue() + 64)));
+    if (slider == &lfo1TVADepthSlider)
+        sendSysexPatchToneChange1(44,(uint8_t(lfo1TVADepthSlider.getValue() + 64)));
+    if (slider == &lfo2RateSlider)
+        sendSysexPatchToneChange1(48,(uint8_t(lfo2RateSlider.getValue())));
+    if (slider == &lfo2DelaySlider)
+        sendSysexPatchToneChange2(49,(uint8_t(lfo2DelaySlider.getValue())));
+    if (slider == &lfo2FadeTimeSlider)
+        sendSysexPatchToneChange1(52,(uint8_t(lfo2FadeTimeSlider.getValue())));
+    if (slider == &lfo2PitchDepthSlider)
+        sendSysexPatchToneChange1(53,(uint8_t(lfo2PitchDepthSlider.getValue() + 64)));
+    if (slider == &lfo2TVFDepthSlider)
+        sendSysexPatchToneChange1(54,(uint8_t(lfo2TVFDepthSlider.getValue() + 64)));
+    if (slider == &lfo2TVADepthSlider)
+        sendSysexPatchToneChange1(55,(uint8_t(lfo2TVADepthSlider.getValue() + 64)));
+    
+    if (slider == &pitchCoarseSlider)
+        sendSysexPatchToneChange1(56,(uint8_t(pitchCoarseSlider.getValue() + 64)));
+    if (slider == &pitchFineSlider)
+        sendSysexPatchToneChange1(57,(uint8_t(pitchFineSlider.getValue() + 64)));
+    if (slider == &penvLevSensSlider)
+        sendSysexPatchToneChange1(60,(uint8_t(penvLevSensSlider.getValue() + 64)));
+    if (slider == &penvDepthSlider)
+        sendSysexPatchToneChange1(64,(uint8_t(penvDepthSlider.getValue() + 64)));
+    if (slider == &penv1TimeSlider)
+        sendSysexPatchToneChange1(65,(uint8_t(penv1TimeSlider.getValue())));
+    if (slider == &penv1LevelSlider)
+        sendSysexPatchToneChange1(66,(uint8_t(penv1LevelSlider.getValue() + 64)));
+    if (slider == &penv2TimeSlider)
+        sendSysexPatchToneChange1(67,(uint8_t(penv2TimeSlider.getValue())));
+    if (slider == &penv2LevelSlider)
+        sendSysexPatchToneChange1(68,(uint8_t(penv2LevelSlider.getValue() + 64)));
+    if (slider == &penv3TimeSlider)
+        sendSysexPatchToneChange1(69,(uint8_t(penv3TimeSlider.getValue())));
+    if (slider == &penv3LevelSlider)
+        sendSysexPatchToneChange1(70,(uint8_t(penv3LevelSlider.getValue() + 64)));
+    if (slider == &penv4TimeSlider)
+        sendSysexPatchToneChange1(71,(uint8_t(penv4TimeSlider.getValue())));
+    if (slider == &penv4LevelSlider)
+        sendSysexPatchToneChange1(72,(uint8_t(penv4LevelSlider.getValue() + 64)));
+    
+    if (slider == &filterCutoffSlider)
+        sendSysexPatchToneChange1(74,(uint8_t(filterCutoffSlider.getValue())));
+    if (slider == &filterResoSlider)
+        sendSysexPatchToneChange1(75,(uint8_t(filterResoSlider.getValue())));
+    if (slider == &fenvLevSensSlider)
+        sendSysexPatchToneChange1(79,(uint8_t(fenvLevSensSlider.getValue() + 64)));
+    if (slider == &fenvDepthSlider)
+        sendSysexPatchToneChange1(83,(uint8_t(fenvDepthSlider.getValue() + 64)));
+    if (slider == &fenv1TimeSlider)
+        sendSysexPatchToneChange1(84,(uint8_t(fenv1TimeSlider.getValue())));
+    if (slider == &fenv1LevelSlider)
+        sendSysexPatchToneChange1(85,(uint8_t(fenv1LevelSlider.getValue() + 64)));
+    if (slider == &fenv2TimeSlider)
+        sendSysexPatchToneChange1(86,(uint8_t(fenv2TimeSlider.getValue())));
+    if (slider == &fenv2LevelSlider)
+        sendSysexPatchToneChange1(87,(uint8_t(fenv2LevelSlider.getValue() + 64)));
+    if (slider == &fenv3TimeSlider)
+        sendSysexPatchToneChange1(88,(uint8_t(fenv3TimeSlider.getValue())));
+    if (slider == &fenv3LevelSlider)
+        sendSysexPatchToneChange1(89,(uint8_t(fenv3LevelSlider.getValue() + 64)));
+    if (slider == &fenv4TimeSlider)
+        sendSysexPatchToneChange1(90,(uint8_t(fenv4TimeSlider.getValue())));
+    if (slider == &fenv4LevelSlider)
+        sendSysexPatchToneChange1(91,(uint8_t(fenv4LevelSlider.getValue() + 64)));
+    
+    if (slider == &levelSlider)
+        sendSysexPatchToneChange1(92,(uint8_t(levelSlider.getValue())));
+    if (slider == &panSlider)
+        sendSysexPatchToneChange2(94,(uint8_t(panSlider.getValue() + 64)));
+    if (slider == &toneDelayTimeSlider)
+        sendSysexPatchToneChange2(98,(uint8_t(toneDelayTimeSlider.getValue())));
+    if (slider == &aenvLevSensSlider)
+        sendSysexPatchToneChange1(101,(uint8_t(aenvLevSensSlider.getValue() + 64)));
+    if (slider == &fenv1TimeSlider)
+        sendSysexPatchToneChange1(105,(uint8_t(fenv1TimeSlider.getValue())));
+    if (slider == &fenv1LevelSlider)
+        sendSysexPatchToneChange1(106,(uint8_t(fenv1LevelSlider.getValue())));
+    if (slider == &fenv2TimeSlider)
+        sendSysexPatchToneChange1(107,(uint8_t(fenv2TimeSlider.getValue())));
+    if (slider == &fenv2LevelSlider)
+        sendSysexPatchToneChange1(108,(uint8_t(fenv2LevelSlider.getValue())));
+    if (slider == &fenv3TimeSlider)
+        sendSysexPatchToneChange1(109,(uint8_t(fenv3TimeSlider.getValue())));
+    if (slider == &fenv3LevelSlider)
+        sendSysexPatchToneChange1(110,(uint8_t(fenv3LevelSlider.getValue())));
+    if (slider == &fenv4TimeSlider)
+        sendSysexPatchToneChange1(111,(uint8_t(fenv4TimeSlider.getValue())));
+    
+    if (slider == &drySlider)
+        sendSysexPatchToneChange1(112,(uint8_t(drySlider.getValue())));
+    if (slider == &reverbSlider)
+        sendSysexPatchToneChange1(113,(uint8_t(reverbSlider.getValue())));
+    if (slider == &chorusSlider)
+        sendSysexPatchToneChange1(114,(uint8_t(chorusSlider.getValue())));
 }
 
 void EditToneTab::buttonClicked (juce::Button* button)
@@ -1261,6 +1498,20 @@ void EditToneTab::buttonClicked (juce::Button* button)
         sendSysexPatchToneChange1(3,(toneSwitchToggle.getToggleStateValue() == 1 ? 0x01 : 0x00));
     if (button == &FXMSwitchToggle)
         sendSysexPatchToneChange1(4,(FXMSwitchToggle.getToggleStateValue() == 1 ? 0x01 : 0x00));
+    
+    if (button == &volumeSwitchToggle)
+        sendSysexPatchToneChange1(8,(volumeSwitchToggle.getToggleStateValue() == 1 ? 0x01 : 0x00));
+    if (button == &holdSwitchToggle)
+        sendSysexPatchToneChange1(9,(holdSwitchToggle.getToggleStateValue() == 1 ? 0x01 : 0x00));
+    
+    if (button == &lfo1SyncToggle)
+        sendSysexPatchToneChange1(36,(lfo1SyncToggle.getToggleStateValue() == 1 ? 0x01 : 0x00));
+    if (button == &lfo1FadeToggle)
+        sendSysexPatchToneChange1(40,(lfo1FadeToggle.getToggleStateValue() == 1 ? 0x01 : 0x00));
+    if (button == &lfo2SyncToggle)
+        sendSysexPatchToneChange1(47,(lfo2SyncToggle.getToggleStateValue() == 1 ? 0x01 : 0x00));
+    if (button == &lfo2FadeToggle)
+        sendSysexPatchToneChange1(51,(lfo2FadeToggle.getToggleStateValue() == 1 ? 0x01 : 0x00));
 }
 
 void EditToneTab::buttonStateChanged (juce::Button* button)
@@ -1270,13 +1521,88 @@ void EditToneTab::buttonStateChanged (juce::Button* button)
 void EditToneTab::comboBoxChanged (juce::ComboBox* button)
 {
     if (button == &toneSelectionComboBox)
-    {
         updateValues();
-    }
+    
     if (button == &waveGroupComboBox)
-    {
         sendSysexPatchToneChange1(0,(toneSelectionComboBox.getSelectedItemIndex() - 0) & 0x03);
-    }
+    
+    if (button == &modDestAComboBox)
+        sendSysexPatchToneChange1(10,(modDestAComboBox.getSelectedItemIndex() - 0));
+    if (button == &modDestBComboBox)
+        sendSysexPatchToneChange1(12,(modDestBComboBox.getSelectedItemIndex() - 0));
+    if (button == &modDestCComboBox)
+        sendSysexPatchToneChange1(14,(modDestCComboBox.getSelectedItemIndex() - 0));
+    if (button == &modDestDComboBox)
+        sendSysexPatchToneChange1(16,(modDestDComboBox.getSelectedItemIndex() - 0));
+    if (button == &aftDestAComboBox)
+        sendSysexPatchToneChange1(18,(aftDestAComboBox.getSelectedItemIndex() - 0));
+    if (button == &aftDestBComboBox)
+        sendSysexPatchToneChange1(20,(aftDestBComboBox.getSelectedItemIndex() - 0));
+    if (button == &aftDestCComboBox)
+        sendSysexPatchToneChange1(22,(aftDestCComboBox.getSelectedItemIndex() - 0));
+    if (button == &aftDestDComboBox)
+        sendSysexPatchToneChange1(24,(aftDestDComboBox.getSelectedItemIndex() - 0));
+    if (button == &expDestAComboBox)
+        sendSysexPatchToneChange1(26,(expDestAComboBox.getSelectedItemIndex() - 0));
+    if (button == &expDestBComboBox)
+        sendSysexPatchToneChange1(28,(expDestBComboBox.getSelectedItemIndex() - 0));
+    if (button == &expDestCComboBox)
+        sendSysexPatchToneChange1(30,(expDestCComboBox.getSelectedItemIndex() - 0));
+    if (button == &expDestDComboBox)
+        sendSysexPatchToneChange1(32,(expDestDComboBox.getSelectedItemIndex() - 0));
+    
+    if (button == &lfo1FormComboBox)
+        sendSysexPatchToneChange1(34,(lfo1FormComboBox.getSelectedItemIndex() - 0));
+    if (button == &lfo1OffsetComboBox)
+        sendSysexPatchToneChange1(35,(lfo1OffsetComboBox.getSelectedItemIndex() - 0));
+    if (button == &lfo2FormComboBox)
+        sendSysexPatchToneChange1(45,(lfo2FormComboBox.getSelectedItemIndex() - 0));
+    if (button == &lfo2OffsetComboBox)
+        sendSysexPatchToneChange1(46,(lfo2OffsetComboBox.getSelectedItemIndex() - 0));
+    
+    if (button == &pitchRandomComboBox)
+        sendSysexPatchToneChange1(58,(pitchRandomComboBox.getSelectedItemIndex() - 0));
+    if (button == &pitchKFComboBox)
+        sendSysexPatchToneChange1(59,(pitchKFComboBox.getSelectedItemIndex() - 0));
+    if (button == &penvTime1SensComboBox)
+        sendSysexPatchToneChange1(61,(penvTime1SensComboBox.getSelectedItemIndex() - 0));
+    if (button == &penvTime4SensComboBox)
+        sendSysexPatchToneChange1(62,(penvTime4SensComboBox.getSelectedItemIndex() - 0));
+    if (button == &penvTimeKFSensComboBox)
+        sendSysexPatchToneChange1(63,(penvTimeKFSensComboBox.getSelectedItemIndex() - 0));
+    
+    if (button == &filterModeComboBox)
+        sendSysexPatchToneChange1(73,(filterModeComboBox.getSelectedItemIndex() - 0));
+    if (button == &filterResoModeComboBox)
+        sendSysexPatchToneChange1(76,(filterResoModeComboBox.getSelectedItemIndex() - 0));
+    if (button == &filterKFComboBox)
+        sendSysexPatchToneChange1(77,(filterKFComboBox.getSelectedItemIndex() - 0));
+    if (button == &fenvVelCurveComboBox)
+        sendSysexPatchToneChange1(78,(fenvVelCurveComboBox.getSelectedItemIndex() - 0));
+    if (button == &fenvTime1SensComboBox)
+        sendSysexPatchToneChange1(80,(fenvTime1SensComboBox.getSelectedItemIndex() - 0));
+    if (button == &fenvTime4SensComboBox)
+        sendSysexPatchToneChange1(81,(fenvTime4SensComboBox.getSelectedItemIndex() - 0));
+    if (button == &fenvTimeKFSensComboBox)
+        sendSysexPatchToneChange1(82,(fenvTimeKFSensComboBox.getSelectedItemIndex() - 0));
+    
+    if (button == &levelKFComboBox)
+        sendSysexPatchToneChange1(93,(levelKFComboBox.getSelectedItemIndex() - 0));
+    if (button == &panKFComboBox)
+        sendSysexPatchToneChange1(96,(panKFComboBox.getSelectedItemIndex() - 0));
+    if (button == &toneDelayComboBox)
+        sendSysexPatchToneChange1(97,(toneDelayComboBox.getSelectedItemIndex() - 0));
+    if (button == &aenvVelCurveComboBox)
+        sendSysexPatchToneChange1(100,(aenvVelCurveComboBox.getSelectedItemIndex() - 0));
+    if (button == &aenvTime1SensComboBox)
+        sendSysexPatchToneChange1(102,(aenvTime1SensComboBox.getSelectedItemIndex() - 0));
+    if (button == &aenvTime4SensComboBox)
+        sendSysexPatchToneChange1(103,(aenvTime4SensComboBox.getSelectedItemIndex() - 0));
+    if (button == &aenvTimeKFSensComboBox)
+        sendSysexPatchToneChange1(104,(aenvTimeKFSensComboBox.getSelectedItemIndex() - 0));
+    
+    if (button == &outputComboBox)
+        sendSysexPatchToneChange1(115,(outputComboBox.getSelectedItemIndex() - 0));
 }
 
 void EditToneTab::sendSysexPatchToneChange1(uint32_t address, uint8_t value)
