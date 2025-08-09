@@ -384,7 +384,7 @@ void Jv880_juceAudioProcessor::setStateInformation(const void *data,
   mcu->nvram[0x11] = status.isDrums ? 0 : 1;
   memcpy(&mcu->nvram[0x67f0], status.drums, 0xa7c);
   memcpy(&mcu->nvram[0x0d70], status.patch, 0x16a);
-
+  mcu->SC55_Reset();
   mcuLock.exit();
 }
 

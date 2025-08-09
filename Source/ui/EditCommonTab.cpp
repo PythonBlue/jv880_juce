@@ -337,6 +337,8 @@ void EditCommonTab::textEditorTextChanged (juce::TextEditor& textEditor)
 
 void EditCommonTab::sendSysexPatchCommonChange()
 {
+    Patch* patch = (Patch*) audioProcessor.status.patch;
+    
     uint8_t buf[45];
     buf[0] = 0xf0;
     buf[1] = 0x41;
@@ -396,4 +398,28 @@ void EditCommonTab::sendSysexPatchCommonChange()
     audioProcessor.mcuLock.enter();
     audioProcessor.mcu->postMidiSC55(buf, 45);
     audioProcessor.mcuLock.exit();
+    
+    for (int i = 0; i < juce::jmin(12, patchNameEditor.getText().length()); i++)
+      {
+          patch->name[i] = patchNameEditor.getText()[i];
+      }
+    if (patchNameEditor.getText().length() < 12)
+      for (int i = patchNameEditor.getText().length(); i < 12; i++)
+          {
+              patch->name[i] = 0x20;
+          }
+    patch->recChorConfig = uint8_t(reverbTypeComboBox.getSelectedItemIndex() + (chorusTypeComboBox.getSelectedItemIndex() << 4) + (velocitySwitchToggle.getToggleState() << 7));
+    patch->reverbLevel = uint8_t(reverbLevelSlider.getValue());
+    patch->reverbTime = uint8_t(reverbTimeSlider.getValue());
+    patch->reverbFeedback = uint8_t(delayFeedbackSlider.getValue());
+    patch->chorusLevel = uint8_t(chorusLevelSlider.getValue() + (chorusOutputComboBox.getSelectedItemIndex() << 7));
+    patch->chorusDepth = uint8_t(chorusDepthSlider.getValue());
+    patch->chorusRate = uint8_t(chorusRateSlider.getValue());
+    patch->chorusFeedback = uint8_t(chorusFeedbackSlider.getValue());
+    patch->analogFeel = uint8_t(analogFeelSlider.getValue());
+    patch->level = uint8_t(levelSlider.getValue());
+    patch->pan = uint8_t(panSlider.getValue());
+    patch->bendRange = uint8_t(bendRangeDownSlider.getValue() + 64);
+    patch->flags = uint8_t(bendRangeUpSlider.getValue() + (portamentoModeComboBox.getSelectedItemIndex() << 4) + (soloLegatoToggle.getToggleState() << 5) + (portamentoToggle.getToggleState() << 6) + (keyAssignComboBox.getSelectedItemIndex() << 7));
+    patch->portamentoTime = uint8_t(portamentoTimeSlider.getValue() + (portamentoTypeComboBox.getSelectedItemIndex() << 7));
 }
