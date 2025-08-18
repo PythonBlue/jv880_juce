@@ -821,8 +821,8 @@ void EditToneTab::updateValues()
     velRangeLowSlider.setValue(((tone.velocityRangeLow) & 0x7f) + 0, juce::dontSendNotification);
     velRangeHighSlider.setValue(((tone.velocityRangeUp) & 0x7f) + 0, juce::dontSendNotification);
 
-    volumeSwitchToggle.setToggleState(((tone.tvaEnvTime1 >> 7) & 0x01) ? 1 : 0, juce::dontSendNotification);
-    holdSwitchToggle.setToggleState(((tone.tvaEnvLevel1 >> 7) & 0x01) ? 1 : 0, juce::dontSendNotification);
+    volumeSwitchToggle.setToggleState(((tone.tvaDelayModeVeloCurve >> 7) & 0x01) ? 1 : 0, juce::dontSendNotification);
+    holdSwitchToggle.setToggleState(((tone.tvaDelayModeVeloCurve >> 6) & 0x01) ? 1 : 0, juce::dontSendNotification);
 
     modDestAComboBox.setSelectedItemIndex((tone.matrixModDestAB & 0xf) + 0, juce::dontSendNotification);
     modDestBComboBox.setSelectedItemIndex(((tone.matrixModDestAB & 0xf0) >> 4) + 0, juce::dontSendNotification);
@@ -1294,7 +1294,7 @@ void EditToneTab::sendSysexPatchToneChange()
 
     tone->flags = uint8_t(waveGroupComboBox.getSelectedItemIndex() + (toneSwitchToggle.getToggleState() << 7));
     tone->waveNumber = uint8_t(waveformSlider.getValue() - 1);
-    tone->fxmConfig = uint8_t(FXMDepthSlider.getValue() + (FXMSwitchToggle.getToggleState() << 7));
+    tone->fxmConfig = uint8_t((uint8_t(FXMDepthSlider.getValue() - 1) << 0) + (FXMSwitchToggle.getToggleState() << 7));
     tone->velocityRangeLow = uint8_t(velRangeLowSlider.getValue());
     tone->velocityRangeUp = uint8_t(velRangeHighSlider.getValue());
     tone->matrixModDestAB = uint8_t(modDestAComboBox.getSelectedItemIndex() + (modDestBComboBox.getSelectedItemIndex() << 4));
@@ -1361,12 +1361,12 @@ void EditToneTab::sendSysexPatchToneChange()
     tone->tvaLevel = uint8_t(levelSlider.getValue());
     tone->tvaTimeKFDelayTimeKeyfollow = uint8_t(levelKFComboBox.getSelectedItemIndex() + (aenvTimeKFSensComboBox.getSelectedItemIndex() << 4));
     tone->tvaPan = uint8_t(panSlider.getValue() + 64);
-    tone->tvaDelayModeVeloCurve = uint8_t(aenvVelCurveComboBox.getSelectedItemIndex() + (toneDelayComboBox.getSelectedItemIndex() << 3));
+    tone->tvaDelayModeVeloCurve = uint8_t(aenvVelCurveComboBox.getSelectedItemIndex() + (toneDelayComboBox.getSelectedItemIndex() << 3) + (holdSwitchToggle.getToggleState() << 6) + (volumeSwitchToggle.getToggleState() << 7));
     tone->tvaDelayTime = uint8_t(toneDelayTimeSlider.getValue());
     tone->tvaVelocity = uint8_t(aenvLevSensSlider.getValue());
     tone->tvaT1T4Velocity = uint8_t(aenvTime1SensComboBox.getSelectedItemIndex() + (aenvTime4SensComboBox.getSelectedItemIndex() << 4));
-    tone->tvaEnvTime1 = uint8_t(aenv1TimeSlider.getValue() + (volumeSwitchToggle.getToggleState() << 7));
-    tone->tvaEnvLevel1 = uint8_t(aenv1LevelSlider.getValue() + (holdSwitchToggle.getToggleState() << 7));
+    tone->tvaEnvTime1 = uint8_t(aenv1TimeSlider.getValue());
+    tone->tvaEnvLevel1 = uint8_t(aenv1LevelSlider.getValue());
     tone->tvaEnvTime2 = uint8_t(aenv2TimeSlider.getValue());
     tone->tvaEnvLevel2 = uint8_t(aenv2LevelSlider.getValue());
     tone->tvaEnvTime3 = uint8_t(aenv3TimeSlider.getValue());
