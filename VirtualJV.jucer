@@ -29,6 +29,9 @@
         <FILE id="CEIonD" name="EditCommonTab.cpp" compile="1" resource="0"
               file="Source/ui/EditCommonTab.cpp"/>
         <FILE id="nokpbG" name="EditCommonTab.h" compile="0" resource="0" file="Source/ui/EditCommonTab.h"/>
+        <FILE id="VlsUtj" name="EditRhythmTab.cpp" compile="1" resource="0"
+              file="Source/ui/EditRhythmTab.cpp"/>
+        <FILE id="lYpflz" name="EditRhythmTab.h" compile="0" resource="0" file="Source/ui/EditRhythmTab.h"/>
         <FILE id="CNC19E" name="EditToneTab.cpp" compile="1" resource="0" file="Source/ui/EditToneTab.cpp"/>
         <FILE id="Ue4xl7" name="EditToneTab.h" compile="0" resource="0" file="Source/ui/EditToneTab.h"/>
         <FILE id="Ii334A" name="PatchBrowser.cpp" compile="1" resource="0"

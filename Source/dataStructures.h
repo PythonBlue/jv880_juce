@@ -124,3 +124,62 @@ struct Patch
   Tone tones[4];
 }; // 362 bytes
 #pragma pack(pop)
+
+#pragma pack(push, 1)
+struct RhythmTone
+{
+  uint8_t flags; // 0-1: wave group | 7: tone on/off
+  uint8_t waveNumber;
+  uint8_t muteGroup; // 5: envelope mode
+  uint8_t pitchCoarse;
+  uint8_t pitchFine;
+  uint8_t bendRange; // 0-3: pitch time velocity | 4-7: bend range
+  uint8_t pitchRandom;
+  uint8_t tvpVelocity;
+  uint8_t tvpEnvDepth;
+  uint8_t tvpEnvTime1;
+  uint8_t tvpEnvLevel1;
+  uint8_t tvpEnvTime2;
+  uint8_t tvpEnvLevel2;
+  uint8_t tvpEnvTime3;
+  uint8_t tvpEnvLevel3;
+  uint8_t tvpEnvTime4;
+  uint8_t tvpEnvLevel4;
+    
+  uint8_t tvfCutoff;
+  uint8_t tvfResonance;       // 7: soft/hard
+  uint8_t tvfVelocity;
+  uint8_t tvfTimeVelLpfHpf; // (check) 4-5: LPF/HPF
+  uint8_t tvfEnvDepth;
+  uint8_t tvfEnvTime1;
+  uint8_t tvfEnvLevel1;
+  uint8_t tvfEnvTime2;
+  uint8_t tvfEnvLevel2;
+  uint8_t tvfEnvTime3;
+  uint8_t tvfEnvLevel3;
+  uint8_t tvfEnvTime4;
+  uint8_t tvfEnvLevel4;
+    
+  uint8_t tvaLevel;
+  uint8_t tvaPan;
+  uint8_t tvaVelocity;
+  uint8_t tvaTimeVelocity;
+  uint8_t tvaEnvTime1;
+  uint8_t tvaEnvLevel1;
+  uint8_t tvaEnvTime2;
+  uint8_t tvaEnvLevel2;
+  uint8_t tvaEnvTime3;
+  uint8_t tvaEnvLevel3;
+  uint8_t tvaEnvTime4;
+  uint8_t drySend;
+  uint8_t reverbSend;
+  uint8_t chorusSend;
+}; // 44 bytes
+#pragma pack(pop)
+
+#pragma pack(push, 1)
+struct Rhythm
+{
+  RhythmTone tones[61];
+}; // 2684 bytes
+#pragma pack(pop)

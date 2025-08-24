@@ -16,7 +16,7 @@ VirtualJVEditor::VirtualJVEditor(
     VirtualJVProcessor &p)
     : AudioProcessorEditor(&p), processor(p),
       lcd(p), tabs(juce::TabbedButtonBar::TabsAtTop), patchBrowser(p), editCommonTab(p),
-      editTone1Tab(p, this, 0U), editTone2Tab(p, this, 1U), editTone3Tab(p, this, 2U), editTone4Tab(p, this, 3U),
+      editTone1Tab(p, this, 0U), editTone2Tab(p, this, 1U), editTone3Tab(p, this, 2U), editTone4Tab(p, this, 3U), editRhythmTab(p, this),
       settingsTab(p)
 {
   addAndMakeVisible(lcd);
@@ -32,6 +32,7 @@ VirtualJVEditor::VirtualJVEditor(
   tabs.addTab("Tone 2", bgColor, &editTone2Tab, false);
   tabs.addTab("Tone 3", bgColor, &editTone3Tab, false);
   tabs.addTab("Tone 4", bgColor, &editTone4Tab, false);
+  tabs.addTab("Rhythm", bgColor, &editRhythmTab, false);
   tabs.addTab("Settings", bgColor, &settingsTab, false);
 
   if (!processor.loaded) {
@@ -68,6 +69,7 @@ void VirtualJVEditor::updateEditTabs()
     editTone2Tab.updateValues();
     editTone3Tab.updateValues();
     editTone4Tab.updateValues();
+    editRhythmTab.updateValues();
     settingsTab.updateValues();
 }
 
