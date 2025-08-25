@@ -13,6 +13,10 @@
 #include "../PluginProcessor.h"
 #include <JuceHeader.h>
 
+#include "widgets/Button.h"
+#include "widgets/Menu.h"
+#include "widgets/Slider.h"
+
 class VirtualJVEditor;
 
 //==============================================================================
@@ -36,121 +40,183 @@ public:
 
     void sendSysexPatchRhythmChange1Byte(uint8_t address, uint8_t value);
     void sendSysexPatchRhythmChange2Byte(uint8_t address, uint8_t value);
-    void sendSysexPatchRhythmChange();
 
 private:
-    void addMenuEntriesFromArray(juce::ComboBox &menu, const std::vector<std::string> &array);
-    void updateWaveformComboBox(juce::ComboBox &wfMenu);
+    enum EditRhythmWidgets
+    {
+        toneSelect          = 300U,
+        waveGroup           = 301U,
+        waveform            = 302U,
+        toneSwitch          = 303U,
+        mute                = 304U,
+        envMode             = 305U,
+        bendRange           = 306U,
+
+        pitchCoarse         = 310U,
+        pitchFine           = 311U,
+        pitchRandom         = 312U,
+        DelayFeedback       = 313U,
+        penvLevSens         = 314U,
+        penvTimeSens        = 315U,
+        penvDepth           = 316U,
+        
+        penv1Time           = 320U,
+        penv1Level          = 321U,
+        penv2Time           = 322U,
+        penv2Level          = 323U,
+        penv3Time           = 324U,
+        penv3Level          = 325U,
+        penv4Time           = 326U,
+        penv4Level          = 327U,
+        
+        filterMode          = 330U,
+        filterCutoff        = 331U,
+        filterReso          = 332U,
+        filterResoMode      = 333U,
+        fenvLevSens         = 334U,
+        fenvTimeSens        = 335U,
+        fenvDepth           = 336U,
+        
+        fenv1Time           = 340U,
+        fenv1Level          = 341U,
+        fenv2Time           = 342U,
+        fenv2Level          = 343U,
+        fenv3Time           = 344U,
+        fenv3Level          = 345U,
+        fenv4Time           = 346U,
+        fenv4Level          = 347U,
+        
+        level               = 350U,
+        pan                 = 351U,
+        aenvLevSens         = 352U,
+        aenvTimeSens        = 353U,
+        
+        aenv1Time           = 360U,
+        aenv1Level          = 361U,
+        aenv2Time           = 362U,
+        aenv2Level          = 363U,
+        aenv3Time           = 364U,
+        aenv3Level          = 365U,
+        aenv4Time           = 366U,
+        
+        dry                 = 370U,
+        reverb              = 371U,
+        chorus              = 372U,
+        output              = 373U
+    };
+    
+    void addMenuEntriesFromArray(Menu &menu, const std::vector<std::string> &array);
+    void updateWaveformComboBox(Menu &wfMenu);
 
     VirtualJVProcessor &processor;
     VirtualJVEditor *editor;
-    juce::Slider toneSlider;
+    Slider toneSlider {toneSelect, 36, 96, 1};
     juce::Label toneLabel;
     uint8_t toneCount;
 
-    juce::ComboBox waveGroupComboBox;
+    Menu waveGroupComboBox { waveGroup };
     juce::Label waveGroupLabel;
-    juce::ComboBox waveformComboBox;
+    Menu waveformComboBox { waveform };
     juce::Label waveformLabel;
-    juce::ToggleButton toneSwitchToggle;
+    Button toneSwitchToggle { toneSwitch , "Enable" };
     juce::Label toneSwitchLabel;
 
-    juce::Slider muteSlider;
+    Slider muteSlider {mute, 0, 31, 1};
     juce::Label muteLabel;
-    juce::ComboBox envModeComboBox;
+    Menu envModeComboBox { envMode };
     juce::Label envModeLabel;
-    juce::Slider bendRangeSlider;
+    Slider bendRangeSlider { bendRange, 0, 12, 1 };
     juce::Label bendRangeLabel;
 
-    juce::Slider pitchCoarseSlider;
+    Slider pitchCoarseSlider { pitchCoarse, -48, 48, 1 };
     juce::Label pitchCoarseLabel;
-    juce::Slider pitchFineSlider;
+    Slider pitchFineSlider { pitchFine, -50, 50, 1 };
     juce::Label pitchFineLabel;
-    juce::ComboBox pitchRandomComboBox;
+    Menu pitchRandomComboBox { pitchRandom };
     juce::Label pitchRandomLabel;
-    juce::Slider penvLevSensSlider;
+    Slider penvLevSensSlider { penvLevSens, -12, 12, 1 };
     juce::Label penvLevSensLabel;
-    juce::ComboBox penvTimeSensComboBox;
+    Menu penvTimeSensComboBox { penvTimeSens };
     juce::Label penvTimeSensLabel;
-    juce::Slider penvDepthSlider;
+    Slider penvDepthSlider { penvDepth, -12, 12, 1 };
     juce::Label penvDepthLabel;
-    juce::Slider penv1TimeSlider;
+    Slider penv1TimeSlider { penv1Time, 0, 127, 1 };
     juce::Label penv1TimeLabel;
-    juce::Slider penv1LevelSlider;
+    Slider penv1LevelSlider { penv1Level, -63, 63, 1 };
     juce::Label penv1LevelLabel;
-    juce::Slider penv2TimeSlider;
+    Slider penv2TimeSlider { penv2Time, 0, 127, 1 };
     juce::Label penv2TimeLabel;
-    juce::Slider penv2LevelSlider;
+    Slider penv2LevelSlider { penv2Level, -63, 63, 1 };
     juce::Label penv2LevelLabel;
-    juce::Slider penv3TimeSlider;
+    Slider penv3TimeSlider { penv3Time, 0, 127, 1 };
     juce::Label penv3TimeLabel;
-    juce::Slider penv3LevelSlider;
+    Slider penv3LevelSlider { penv3Level, -63, 63, 1 };
     juce::Label penv3LevelLabel;
-    juce::Slider penv4TimeSlider;
+    Slider penv4TimeSlider { penv4Time, 0, 127, 1 };
     juce::Label penv4TimeLabel;
-    juce::Slider penv4LevelSlider;
+    Slider penv4LevelSlider { penv4Level, -63, 63, 1 };
     juce::Label penv4LevelLabel;
 
-    juce::ComboBox filterModeComboBox;
+    Menu filterModeComboBox { filterMode };
     juce::Label filterModeLabel;
-    juce::Slider filterCutoffSlider;
+    Slider filterCutoffSlider { filterCutoff, 0, 127, 1 };
     juce::Label filterCutoffLabel;
-    juce::Slider filterResoSlider;
+    Slider filterResoSlider { filterReso, 0, 127, 1 };
     juce::Label filterResoLabel;
-    juce::ComboBox filterResoModeComboBox;
-    juce::Slider fenvLevSensSlider;
+    Menu filterResoModeComboBox { filterReso };
+    Slider fenvLevSensSlider { fenvLevSens, -63, 63, 1 };
     juce::Label fenvLevSensLabel;
-    juce::ComboBox fenvTimeSensComboBox;
+    Menu fenvTimeSensComboBox { fenvTimeSens };
     juce::Label fenvTimeSensLabel;
-    juce::Slider fenvDepthSlider;
+    Slider fenvDepthSlider { fenvDepth, 0, 127, 1 };
     juce::Label fenvDepthLabel;
-    juce::Slider fenv1TimeSlider;
+    Slider fenv1TimeSlider { fenv1Time, 0, 127, 1 };
     juce::Label fenv1TimeLabel;
-    juce::Slider fenv1LevelSlider;
+    Slider fenv1LevelSlider { fenv1Level, 0, 127, 1 };
     juce::Label fenv1LevelLabel;
-    juce::Slider fenv2TimeSlider;
+    Slider fenv2TimeSlider { fenv2Time, 0, 127, 1 };
     juce::Label fenv2TimeLabel;
-    juce::Slider fenv2LevelSlider;
+    Slider fenv2LevelSlider { fenv2Level, 0, 127, 1 };
     juce::Label fenv2LevelLabel;
-    juce::Slider fenv3TimeSlider;
+    Slider fenv3TimeSlider { fenv3Time, 0, 127, 1 };
     juce::Label fenv3TimeLabel;
-    juce::Slider fenv3LevelSlider;
+    Slider fenv3LevelSlider { fenv3Level, 0, 127, 1 };
     juce::Label fenv3LevelLabel;
-    juce::Slider fenv4TimeSlider;
+    Slider fenv4TimeSlider { fenv4Time, 0, 127, 1 };
     juce::Label fenv4TimeLabel;
-    juce::Slider fenv4LevelSlider;
+    Slider fenv4LevelSlider { fenv4Level, 0, 127, 1 };
     juce::Label fenv4LevelLabel;
 
-    juce::Slider levelSlider;
+    Slider levelSlider { level, 0, 127, 1 };
     juce::Label levelLabel;
-    juce::Slider panSlider;
+    Slider panSlider { pan, -64, 64, 1 };
     juce::Label panLabel;
-    juce::Slider aenvLevSensSlider;
+    Slider aenvLevSensSlider { aenvLevSens, -63, 63, 1 };
     juce::Label aenvLevSensLabel;
-    juce::ComboBox aenvTimeSensComboBox;
+    Menu aenvTimeSensComboBox { aenvTimeSens };
     juce::Label aenvTimeSensLabel;
-    juce::Slider aenv1TimeSlider;
+    Slider aenv1TimeSlider { aenv1Time, 0, 127, 1 };
     juce::Label aenv1TimeLabel;
-    juce::Slider aenv1LevelSlider;
+    Slider aenv1LevelSlider { aenv1Level, 0, 127, 1 };
     juce::Label aenv1LevelLabel;
-    juce::Slider aenv2TimeSlider;
+    Slider aenv2TimeSlider { aenv2Time, 0, 127, 1 };
     juce::Label aenv2TimeLabel;
-    juce::Slider aenv2LevelSlider;
+    Slider aenv2LevelSlider { aenv2Level, 0, 127, 1 };
     juce::Label aenv2LevelLabel;
-    juce::Slider aenv3TimeSlider;
+    Slider aenv3TimeSlider { aenv3Time, 0, 127, 1 };
     juce::Label aenv3TimeLabel;
-    juce::Slider aenv3LevelSlider;
+    Slider aenv3LevelSlider { aenv3Level, 0, 127, 1 };
     juce::Label aenv3LevelLabel;
-    juce::Slider aenv4TimeSlider;
+    Slider aenv4TimeSlider { aenv4Time, 0, 127, 1 };
     juce::Label aenv4TimeLabel;
 
-    juce::Slider drySlider;
+    Slider drySlider { dry, 0, 127, 1 };
     juce::Label dryLabel;
-    juce::Slider reverbSlider;
+    Slider reverbSlider { reverb, 0, 127, 1 };
     juce::Label reverbLabel;
-    juce::Slider chorusSlider;
+    Slider chorusSlider { chorus, 0, 127, 1 };
     juce::Label chorusLabel;
-    juce::ComboBox outputComboBox;
+    Menu outputComboBox { output };
     juce::Label outputLabel;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(EditRhythmTab)

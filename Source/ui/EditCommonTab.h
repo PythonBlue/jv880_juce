@@ -89,7 +89,7 @@ private:
   Menu reverbTypeComboBox{ ReverbType };
   Slider reverbLevelSlider{ ReverbLevel, 0, 127, 1 };
   Slider reverbTimeSlider{ ReverbTime, 0, 127, 1 };
-  Slider delayFeedbackSlider{ DelayFeedback, 0, 127, 1 };;
+  Slider delayFeedbackSlider{ DelayFeedback, 0, 127, 1 };
 
   juce::Label chorusTypeLabel{ "", "Chorus" };
   juce::Label chorusLevelLabel{ "", "Level" };

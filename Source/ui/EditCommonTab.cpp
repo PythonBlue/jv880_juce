@@ -455,7 +455,7 @@ void EditCommonTab::sendSysexPatchNameChange()
             checksum -= 128;
     }
 
-    checksum = 128 - checksum;
+    checksum = (128 - checksum) % 128;
 
     buf[22] = (uint8_t)checksum;
     buf[23] = 0xf7;
