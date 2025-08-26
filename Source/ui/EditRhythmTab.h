@@ -13,6 +13,8 @@
 #include "../PluginProcessor.h"
 #include <JuceHeader.h>
 
+#include "../dataStructures.h"
+
 #include "widgets/Button.h"
 #include "widgets/Menu.h"
 #include "widgets/Slider.h"
