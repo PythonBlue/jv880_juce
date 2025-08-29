@@ -10,9 +10,11 @@
 
 #pragma once
 
-#include "../PluginProcessor.h"
+
 #include <JuceHeader.h>
 
+#include "../PluginProcessor.h"
+#include "../PluginEditor.h"
 #include "../dataStructures.h"
 
 #include "widgets/Button.h"
@@ -223,3 +225,4 @@ private:
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(EditRhythmTab)
 };
+
