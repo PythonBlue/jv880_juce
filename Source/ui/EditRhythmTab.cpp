@@ -11,12 +11,6 @@
 #include <JuceHeader.h>
 #include <algorithm>
 #include "EditRhythmTab.h"
-#include "../PluginEditor.h"
-#include "../dataStructures.h"
-
-#include "widgets/Button.h"
-#include "widgets/Menu.h"
-#include "widgets/Slider.h"
 
 //==============================================================================
 EditRhythmTab::EditRhythmTab
@@ -841,3 +835,4 @@ void EditRhythmTab::sendSysexPatchRhythmChange2Byte(uint8_t address, uint8_t val
     processor.mcu->postMidiSC55(buf, 13);
     processor.mcuLock.exit();
 }
+
